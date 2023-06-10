@@ -1,18 +1,6 @@
 
 
 
-
-get_current_clean <- function(location) {
-  
-  latitude <- location[1]
-  longitude = location[2]
-  
-  current <- get_current(lat = latitude, lon = longitude, units = "imperial") %>% 
-    owmr_as_tibble()
-
-}
-
-
 get_forecast_clean <- function(location) {
   
   latitude <- location[1]
@@ -36,6 +24,14 @@ get_forecast_clean <- function(location) {
   return(forecast)
   
 }
+
+
+
+creamery_forecast <- get_forecast_clean(creamery)
+
+brickyard_forecast <- get_forecast_clean(brickyard)
+
+
 
 
 

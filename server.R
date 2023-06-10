@@ -3,21 +3,33 @@
 server <- function(input, output) {
   
   
-  output$precip <- renderPlotly(
+  output$creamery_temps <- renderPlotly(
     ggplotly(
-      make_precip_plot(
-        get_forecast_clean(brickyard)
-      )
+      creamery_temps_plot
     )
   )
   
-  output$temps <- renderPlotly(
+  output$creamery_precip <- renderPlotly(
     ggplotly(
-      make_temps_plot(
-        get_forecast_clean(brickyard)
-      )
+      creamery_precip_plot
+    )
+  )
+  
+  output$brickyard_temps <- renderPlotly(
+    ggplotly(
+      brickyard_temps_plot
+    )
+  )
+  
+  output$brickyard_precip <- renderPlotly(
+    ggplotly(
+      brickyard_precip_plot
     )
   )
   
   
 }
+
+
+
+

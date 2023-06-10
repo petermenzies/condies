@@ -1,4 +1,5 @@
 
+# functions ----
 
 make_precip_plot <- function(forecast) {
   
@@ -28,4 +29,16 @@ make_temps_plot <- function(forecast) {
   return(p)
   
 }
+
+
+# objects ----
+
+creamery_temps_plot <- make_temps_plot(creamery_forecast)
+creamery_precip_plot <- make_precip_plot(creamery_forecast)
+
+brickyard_temps_plot <- make_temps_plot(brickyard_forecast)
+brickyard_precip_plot <- make_precip_plot(brickyard_forecast)
+
+
+
 
