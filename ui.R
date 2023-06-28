@@ -2,7 +2,8 @@
 
 ui <- dashboardPage(
   
-  skin = "purple",
+  # skin = "purple-light",
+
   
   dashboardHeader(title = "SB Condies"),
   dashboardSidebar(
@@ -28,6 +29,10 @@ ui <- dashboardPage(
                   title = "Creamery",
                   collapsible = TRUE,
                   width = 11,
+                  solidHeader = TRUE,
+                  background = gen_box_color(creamery_desc),
+                  status = if (str_detect(creamery_desc, "rain")) {"warning"}
+                           else {NULL},
                   
                   ## CURRENT ----
                   
@@ -36,8 +41,8 @@ ui <- dashboardPage(
                     descriptionBlock(
                       number = NULL, 
                       # numberColor = "red", 
-                      numberIcon = icon(gen_desc_icon(creamery_current[["weather_description"]])),
-                      header = paste0(creamery_current[["weather_description"]]), 
+                      numberIcon = gen_desc_icon(creamery_desc),
+                      header = paste0(creamery_desc), 
                       text = br(),
                       rightBorder = TRUE,
                       marginBottom = FALSE
@@ -104,6 +109,7 @@ ui <- dashboardPage(
                     collapsible = TRUE,
                     collapsed = TRUE,
                     width = 12,
+                    background = gen_box_color(creamery_desc),
                     plotlyOutput("creamery_temps")
                   ),
                   
@@ -112,6 +118,7 @@ ui <- dashboardPage(
                     collapsible = TRUE,
                     collapsed = TRUE,
                     width = 12,
+                    background = gen_box_color(creamery_desc),
                     plotlyOutput("creamery_precip")
                   )
                 ),
@@ -122,6 +129,10 @@ ui <- dashboardPage(
                   title = "Brickyard",
                   collapsible = TRUE,
                   width = 11,
+                  solidHeader = TRUE,
+                  background = gen_box_color(brickyard_desc),
+                  status = if (str_detect(brickyard_desc, "rain")) {"warning"}
+                  else {NULL},
                   
                   ## CURRENT ----
                   
@@ -130,9 +141,9 @@ ui <- dashboardPage(
                     descriptionBlock(
                       number = NULL, 
                       # numberColor = "red", 
-                      numberIcon = icon(gen_desc_icon(brickyard_current[["weather_description"]])),
-                      header = paste0(brickyard_current[["weather_description"]]), 
-                      text = "general",
+                      numberIcon = gen_desc_icon(brickyard_current[["desc"]]),
+                      header = paste0(brickyard_current[["desc"]]), 
+                      text = br(),
                       rightBorder = TRUE,
                       marginBottom = FALSE
                     )
@@ -213,7 +224,7 @@ ui <- dashboardPage(
               )
       ),
       
-      # Second tab content
+      # Second tab content ----
       tabItem(tabName = "widgets",
               h2("Widgets tab content")
       )

@@ -4,8 +4,12 @@ librarian::shelf(shiny, shinydashboard, shinydashboardPlus, ggiraph, owmr,
 
 OWM_API_KEY <- readr::read_file("key.txt")
 
-owmr_settings(api_key = OWM_API_KEY)
+# owmr_settings(api_key = OWM_API_KEY)
+Sys.setenv(OWM_API_KEY = OWM_API_KEY)
+
+updated <- readRDS("data/updated.RDS")
 
 source("R/locations.R")
-source("R/get_forecasts.R")
+source("R/get_owm_data.R")
 source("R/plots.R")
+source("R/icons.R")

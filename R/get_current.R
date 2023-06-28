@@ -14,7 +14,10 @@ get_current_clean <- function(location) {
 }
 
 creamery_current <- get_current_clean(creamery)
+creamery_desc <- creamery_current[["weather_description"]]
+
 
 brickyard_current <- get_current_clean(brickyard)
+brickyard_desc <- brickyard_current[["weather_description"]]
 
 echo_current <- get_current_clean(echo)

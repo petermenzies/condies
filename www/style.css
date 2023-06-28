@@ -1,9 +1,72 @@
 
+/* CLASSES */
+
+/* background */
+.content-wrapper {
+  background-color: #37373C;
+}
+
+/* all text */
+html, body {
+  color: black;
+}
+
+
+
+.skin-blue .main-header .navbar {
+  background-color: #1E1E1E;
+}
+
+.skin-blue .main-header .logo {
+  background-color: #1E1E1E !important;
+}
+
 .box.box-solid {
   border-radius: 12px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.1);
+  /*box-shadow: 0 1px 2px #1E1E1E, 0 1px 2px #1E1E1E;*/
+  background-color: gray;
+  border-color: #1E1E1E;
+  align-content: center;
+}
+
+.box-title {
+  color: black;
+}
+
+.box.box-solid.box-warning>.box-header {
+  border-radius: 12px 12px 2px 2px;
 }
 
 .forecast-box {
   padding-top: 30px;
 }
+
+/* CUSTOM ICONS */
+
+.mist-icon {
+  background: url("mist.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  display: block;
+  float: center;
+}
+
+
+/* ELEMENTS */
+
+
+#sidebarCollapsed {
+  background-color: #1E1E1E;
+}
+
+
+
+
+
+
+
+
+
